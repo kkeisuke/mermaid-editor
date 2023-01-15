@@ -13,12 +13,18 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "dexie": "^3.2.2",
+    "dompurify": "^2.4.3",
+    "marked": "^4.2.12",
+    "monaco-editor": "^0.34.1",
     "vue": "^3.2.45"
   },
   "devDependencies": {
     "@playwright/test": "^1.29.2",
     "@rushstack/eslint-patch": "^1.2.0",
+    "@types/dompurify": "^2.4.0",
     "@types/jsdom": "^20.0.1",
+    "@types/marked": "^4.0.8",
     "@types/node": "^18.11.18",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-prettier": "^7.0.0",
