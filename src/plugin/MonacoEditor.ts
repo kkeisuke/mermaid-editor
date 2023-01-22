@@ -1,5 +1,6 @@
 import * as monaco from 'monaco-editor'
 import editorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker'
+import initEditor from 'monaco-mermaid'
 
 const defaultOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
   automaticLayout: true,
@@ -7,7 +8,7 @@ const defaultOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
     enabled: false
   },
   tabSize: 2,
-  language: 'apex',
+  language: 'markdown',
   theme: 'vs-dark'
 }
 
@@ -20,6 +21,7 @@ export const createEditor = (editor: HTMLElement, options: typeof defaultOptions
       return new editorWorker()
     }
   }
+  initEditor(monaco)
   return monaco.editor.create(editor, { ...defaultOptions, ...options })
 }
 
