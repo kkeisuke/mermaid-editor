@@ -20,6 +20,7 @@
     "marked": "^4.2.12",
     "mermaid": "^9.3.0",
     "monaco-editor": "^0.34.1",
+    "monaco-mermaid": "^1.0.8",
     "vue": "^3.2.45"
   },
   "devDependencies": {
