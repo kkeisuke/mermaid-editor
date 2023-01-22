@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import MermaidEditor from '@/components/MermaidEditor.vue'
+</script>
 
 <template>
-  <div />
+  <mermaid-editor />
 </template>
 
 <style>
