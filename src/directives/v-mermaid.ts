@@ -17,7 +17,7 @@ export const vMermaid: Directive<VMermaidElement> = {
     el.__timer__ = window.setTimeout(() => {
       const targets = el.querySelectorAll<HTMLElement>(`.${MERMAID_CLASS_NAME}`)
       targets.forEach((target) => {
-        mermaid.mermaidAPI.render(`svg-${target.id}`, target.textContent || '', (svg) => {
+        mermaid.mermaidAPI.render(`svg-${crypto.randomUUID()}`, target.textContent || '', (svg) => {
           // mermaid コードの下に配置する
           target.nextElementSibling?.className === MERMAID_SVG_CLASS_NAME && target.nextElementSibling.remove()
           target.insertAdjacentHTML('afterend', `<div class="${MERMAID_SVG_CLASS_NAME}">${svg}</div>`)

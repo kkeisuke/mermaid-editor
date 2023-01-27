@@ -26,7 +26,7 @@ watch(
       <li v-for="note in notes" :key="note.id" class="list-group-item p-0">
         <div class="inner p-2 d-flex flex-wrap gap-1" :class="{ current: note.id === current.id }" role="button" @click="selectNote(note.id)">
           <div v-for="(diagram, index) in note.diagrams" :key="index" :class="{ 'w-100': !index, 'secondary flex-grow-1': index }">
-            <pre :id="`diagram-${note.id}-${index}`" class="mermaid">{{ diagram }}</pre>
+            <pre class="mermaid"><code>{{ diagram }}</code></pre>
           </div>
           <delete-btn class="position-absolute bottom-0 start-0 mb-2 ms-2" @delete="deleteNote(note)" />
         </div>

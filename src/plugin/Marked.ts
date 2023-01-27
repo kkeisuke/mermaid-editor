@@ -11,10 +11,7 @@ DOMPurify.addHook('afterSanitizeAttributes', (node) => {
     node.className = 'table table-hover'
   }
   if (node.tagName.toLowerCase() === 'pre') {
-    const className = node.getElementsByTagName('code')[0].className.replace('language-', '')
-    node.className = className
-    node.id = `diagram-${crypto.randomUUID()}`
-    node.innerHTML = node.textContent || ''
+    node.className = node.getElementsByTagName('code')[0].className.replace('language-', '')
   }
 })
 
