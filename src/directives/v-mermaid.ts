@@ -16,12 +16,17 @@ export const vMermaid: Directive<VMermaidElement> = {
     // updated を間引く
     el.__timer__ = window.setTimeout(() => {
       const targets = el.querySelectorAll<HTMLElement>(`.${MERMAID_CLASS_NAME}`)
-      targets.forEach((target) => {
-        mermaid.mermaidAPI.render(`svg-${crypto.randomUUID()}`, target.textContent || '', (svg) => {
+      let result = ''
+      targets.forEach(async (target) => {
+        try {
+          result = await mermaid.mermaidAPI.renderAsync(`svg-${crypto.randomUUID()}`, target.textContent || '')
+        } catch (error) {
+          error instanceof Error && (result = error.message)
+        } finally {
           // mermaid コードの下に配置する
           target.nextElementSibling?.className === MERMAID_SVG_CLASS_NAME && target.nextElementSibling.remove()
-          target.insertAdjacentHTML('afterend', `<div class="${MERMAID_SVG_CLASS_NAME}">${svg}</div>`)
-        })
+          target.insertAdjacentHTML('afterend', `<div class="${MERMAID_SVG_CLASS_NAME}">${result}</div>`)
+        }
       })
     }, 500)
   }
