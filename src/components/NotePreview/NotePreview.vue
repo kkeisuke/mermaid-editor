@@ -17,17 +17,17 @@ const { htmlString } = injectUseNoteSingle()
 </template>
 
 <style scoped>
-:deep(.mermaid-svg) {
+:deep(.diagram-svg) {
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
   align-items: center; /* for safari */
 }
-:deep(.mermaid-svg) svg {
+:deep(.diagram-svg) svg {
   max-width: unset !important;
   width: calc(50rem * v-bind('imgSize'));
 }
-:deep(.mermaid) {
+:deep(pre.mermaid) {
   display: none;
 }
 </style>
