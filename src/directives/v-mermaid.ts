@@ -23,6 +23,6 @@ export const vMermaid: Directive<VMermaidElement> = {
           target.insertAdjacentHTML('afterend', `<div class="${MERMAID_SVG_CLASS_NAME}">${svg}</div>`)
         })
       })
-    }, 400)
+    }, 500)
   }
 }
