@@ -39,8 +39,7 @@ watch(
 .inner {
   min-height: 14rem;
 }
-.inner:hover,
-.inner.current {
+.inner:is(:hover, .current) {
   outline-offset: -0.4rem;
   outline: 0.4rem solid var(--bs-pink);
 }
