@@ -18,13 +18,9 @@ export const vMermaid: Directive<VMermaidElement> = {
       const targets = el.querySelectorAll<HTMLElement>(`.${MERMAID_CLASS_NAME}`)
       targets.forEach((target) => {
         mermaid.mermaidAPI.render(`svg-${target.id}`, target.textContent || '', (svg) => {
-          const svgHTML = `<div class="${MERMAID_SVG_CLASS_NAME}">${svg}</div>`
           // mermaid コードの下に配置する
-          if (target.nextElementSibling?.className === MERMAID_SVG_CLASS_NAME) {
-            target.nextElementSibling.innerHTML = svgHTML
-          } else {
-            target.insertAdjacentHTML('afterend', svgHTML)
-          }
+          target.nextElementSibling?.className === MERMAID_SVG_CLASS_NAME && target.nextElementSibling.remove()
+          target.insertAdjacentHTML('afterend', `<div class="${MERMAID_SVG_CLASS_NAME}">${svg}</div>`)
         })
       })
     }, 400)
