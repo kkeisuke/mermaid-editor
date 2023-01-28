@@ -30,7 +30,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
-:deep(svg) {
+.diagram-svg {
+  overflow: hidden;
+}
+.diagram-svg :deep(svg) {
   height: 100%;
 }
 </style>
