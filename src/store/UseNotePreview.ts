@@ -1,7 +1,7 @@
 import { notePreviewRepository } from '@/repository/NotePreviewRepository'
 import { computed, inject, type InjectionKey, provide, ref } from 'vue'
 
-const DEFAULT_IMG_SIZE = 100
+const DEFAULT_IMG_SIZE = 50
 
 export const useNotePreview = () => {
   const imgSize = ref(notePreviewRepository.fetchImgSize() || DEFAULT_IMG_SIZE)
@@ -16,7 +16,7 @@ export const useNotePreview = () => {
   }
 
   return {
-    imgSize: computed(() => imgSize.value / DEFAULT_IMG_SIZE),
+    imgSize: computed(() => imgSize.value / 100),
     addImgSize
   }
 }

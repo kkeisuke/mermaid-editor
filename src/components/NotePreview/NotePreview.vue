@@ -25,7 +25,7 @@ const { htmlString } = injectUseNoteSingle()
 }
 :deep(.diagram-svg) svg {
   max-width: unset !important;
-  width: calc(50rem * v-bind('imgSize'));
+  width: calc(40rem * v-bind('imgSize'));
 }
 :deep(pre.mermaid) {
   display: none;
