@@ -12,6 +12,7 @@ DOMPurify.addHook('afterSanitizeAttributes', (node) => {
   }
   if (node.tagName.toLowerCase() === 'pre') {
     node.className = node.getElementsByTagName('code')[0].className.replace('language-', '')
+    node.setAttribute('hidden', '')
   }
 })
 

@@ -27,7 +27,4 @@ const { htmlString } = injectUseNoteSingle()
   max-width: unset !important;
   width: calc(40rem * v-bind('imgSize'));
 }
-:deep(pre.mermaid) {
-  display: none;
-}
 </style>
